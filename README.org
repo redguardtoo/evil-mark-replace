@@ -1,0 +1,41 @@
+* evil-mark-replace (v0.0.1)
+Replace *the thing* in [[https://gitorious.org/evil/pages/Home][EVIL]] way.
+
+The thing is either the *symbol under cursor or the selected text*.
+
+* Install
+Place evil-mark-replace.el somewhere (say ~/.emacs/lisp), add below code into ".emacs":
+
+#+begin_src elisp
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'evil-mark-replace)
+#+end_src
+
+* Usage
+Here are the commands you can use. Feel free to assign key bindings to them.
+** evil-mark-replace-in-buffer
+Mark *buffer* and replace the thing.
+** evil-mark-replace-in-defun
+Mark *defun* and replace the thing.
+** evil-mark-replace-in-tagged-region
+Mark *tagged region* and replace the thing.
+
+Tagged region is created by "M-x evil-mark-tag-selected-region".
+
+You may "M-x evil-mark-show-tagged-region" to double check tagged region.
+** evil-mark-replace-in-text-object-operator
+Mark *text object(s)* and replace the thing. You must assign key binding to it.
+
+If its key binding is ",r", you can ",r4p" to mark 4 paragraphs and replace in marked area.
+
+* Bug Report
+See [[https://github.com/redguardtoo/evil-mark-replace]].
+
+* License
+Copyright (C) 2015 Chen Bin
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see [[http://www.gnu.org/licenses/]].
