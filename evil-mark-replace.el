@@ -5,7 +5,7 @@
 ;; Author: Chen Bin <chenbin.sh@gmail.com>
 ;; URL: http://github.com/redguardtoo/evil-mark-replace
 ;; Keywords: mark replace evil
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Package-Requires: ((evil "1.0.8"))
 
 ;; This file is not part of GNU Emacs.
@@ -99,22 +99,9 @@ which is either symbol under cursor or the selected text"
   (evil-mark-replace-string 'evil-mark-show-tagged-region))
 
 ;;;###autoload
-(defun evil-mark-replace-in-region (beg end)
-  "Mark in specified region and replace the thing"
-  (setq evil-mark-tagged-region-begin beg)
-  (setq evil-mark-tagged-region-end end)
-  (evil-mark-replace-string 'evil-mark-show-tagged-region))
-
-(evil-define-operator evil-mark-replace-in-text-object-operator (beg end type register yank-handler)
-"Mark text object and replace the thing
-which is either symbol under cursor or the selected text"
-  (interactive "<R><x><y>")
-  (evil-apply-on-block #'evil-mark-replace-in-region beg end nil))
-
-;;;###autoload
 (defun evil-mark-version ()
   (interactive)
-  (message "0.0.1"))
+  (message "0.0.2"))
 
 (provide 'evil-mark-replace)
 

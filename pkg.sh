@@ -1,5 +1,5 @@
 #!/bin/bash
-pkg=evil-mark-replace-0.0.1
+pkg=evil-mark-replace-0.0.2
 mkdir $pkg
 cp README.org $pkg
 cp *.el $pkg
