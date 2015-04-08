@@ -1,11 +1,11 @@
-;;; evil-mark-replace --- replace text in evil way
+;;; evil-mark-replace --- replace the thing in marked area
 
 ;; Copyright (C) 2015 Chen Bin
 
 ;; Author: Chen Bin <chenbin.sh@gmail.com>
 ;; URL: http://github.com/redguardtoo/evil-mark-replace
 ;; Keywords: mark replace evil
-;; Version: 0.0.2
+;; Version: 0.0.3
 ;; Package-Requires: ((evil "1.0.8"))
 
 ;; This file is not part of GNU Emacs.
@@ -17,11 +17,11 @@
 ;; Install:
 ;;  (require 'evil-mark-replace)
 ;;
-;; Example usage:
-;;  1. `M-x evil-mark-replace-in-defun'
-;;  2. `M-x evil-mark-replace-in-buffer'
-;;  3. Select a region, `M-x evil-mark-tag-selected-region'.
-;;     Then `M-x evil-mark-replace-in-tagged-region'
+;; Usage:
+;;  Example 1, `M-x evil-mark-replace-in-defun'
+;;  Example 2, `M-x evil-mark-replace-in-buffer'
+;;  Example 3, Select a region, `M-x evil-mark-tag-selected-region'.
+;;             Then `M-x evil-mark-replace-in-tagged-region'
 
 ;; This file is free software (GPLv3 License)
 
@@ -101,7 +101,7 @@ which is either symbol under cursor or the selected text"
 ;;;###autoload
 (defun evil-mark-version ()
   (interactive)
-  (message "0.0.2"))
+  (message "0.0.3"))
 
 (provide 'evil-mark-replace)
 

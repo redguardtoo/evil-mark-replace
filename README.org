@@ -1,7 +1,9 @@
-* evil-mark-replace (v0.0.2)
-Replace *the thing* in [[https://gitorious.org/evil/pages/Home][EVIL]] way.
+* evil-mark-replace (v0.0.3)
+Replace the thing in marked area.
 
 The thing is either the *symbol under cursor or the selected text*.
+
+[[https://gitorious.org/evil/pages/Home][EVIL]] is required.
 
 * Install
 Place evil-mark-replace.el somewhere (say ~/.emacs/lisp), add below code into ".emacs":
@@ -16,7 +18,7 @@ Here are the commands you can use. Feel free to assign key bindings to them.
 ** evil-mark-replace-in-buffer
 Mark *buffer* and replace the thing.
 ** evil-mark-replace-in-defun
-Mark *defun* and replace the thing.
+   Mark *defun* and replace the thing.
 ** evil-mark-replace-in-tagged-region
 Mark *tagged region* and replace the thing.
 
