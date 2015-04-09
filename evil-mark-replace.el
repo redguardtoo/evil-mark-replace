@@ -1,4 +1,4 @@
-;;; evil-mark-replace --- replace the thing in marked area
+;;; evil-mark-replace.el --- replace the thing in marked area
 
 ;; Copyright (C) 2015 Chen Bin
 
