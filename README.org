@@ -1,4 +1,4 @@
-* evil-mark-replace (v0.0.3)
+* evil-mark-replace (v0.0.4)
 Replace the thing in marked area.
 
 The thing is either the *symbol under cursor or the selected text*.
@@ -15,16 +15,16 @@ Place evil-mark-replace.el somewhere (say ~/.emacs/lisp), add below code into ".
 
 * Usage
 Here are the commands you can use. Feel free to assign key bindings to them.
-** evil-mark-replace-in-buffer
+** evilmr-replace-in-buffer
 Mark *buffer* and replace the thing.
-** evil-mark-replace-in-defun
+** evilmr-replace-in-defun
    Mark *defun* and replace the thing.
-** evil-mark-replace-in-tagged-region
+** evilmr-replace-in-tagged-region
 Mark *tagged region* and replace the thing.
 
-Tagged region is created by "M-x evil-mark-tag-selected-region".
+Tagged region is created by "M-x evilmr-tag-selected-region".
 
-You may "M-x evil-mark-show-tagged-region" to double check tagged region.
+You may "M-x evilmr-show-tagged-region" to double check tagged region.
 * Bug Report
 See [[https://github.com/redguardtoo/evil-mark-replace]].
 
