@@ -1,4 +1,4 @@
-* evil-mark-replace (v0.0.4)
+* evil-mark-replace
 Replace symbol at point in marked area.
 
 [[https://github.com/emacs-evil/evil][EVIL]] is required.
@@ -22,6 +22,8 @@ Mark tagged region and replace the thing.
 Tagged region is created by =M-x evilmr-tag-selected-region=.
 
 You may =M-x evilmr-show-tagged-region= to double check tagged region.
+** evilmr-replace-lines
+Replace in mulitiple lines.
 * Bug Report
 See [[https://github.com/redguardtoo/evil-mark-replace]].
 

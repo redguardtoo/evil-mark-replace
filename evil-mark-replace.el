@@ -5,7 +5,7 @@
 ;; Author: Chen Bin <chenbin DOT sh AT gmail DOT com>
 ;; URL: http://github.com/redguardtoo/evil-mark-replace
 ;; Keywords: convenience
-;; Version: 0.0.4
+;; Version: 0.0.5
 ;; Package-Requires: ((evil "1.14.0"))
 
 ;; This file is not part of GNU Emacs.
@@ -16,10 +16,12 @@
 ;;  (require 'evil-mark-replace)
 ;;
 ;; Usage:
-;;  Example 1, "M-x evilmr-replace-in-defun"
-;;  Example 2, "M-x evilmr-replace-in-buffer"
-;;  Example 3, Select a region, "M-x evilmr-tag-selected-region".
-;;             Then `M-x evilmr-replace-in-tagged-region'
+;;  1, "M-x evilmr-replace-in-defun"
+;;  2, "M-x evilmr-replace-in-buffer"
+;;  3, Select a region, "M-x evilmr-tag-selected-region",
+;;     then "M-x evilmr-replace-in-tagged-region"
+;;  4, "M-x evilmr-replace-lines"
+;;
 
 ;; This file is free software (GPLv3 License)
 
@@ -77,25 +79,43 @@
 (defun evilmr-replace-in-buffer ()
   "Mark buffer and replace the thing."
   (interactive)
-  (evilmr-replace 'mark-whole-buffer))
+  (evilmr-replace #'mark-whole-buffer))
 
 ;;;###autoload
 (defun evilmr-replace-in-defun ()
   "Mark defun and replace the thing."
   (interactive)
-  (evilmr-replace 'mark-defun))
+  (evilmr-replace #'mark-defun))
+
+(defun evilmr-get-range (num)
+  "Get range of NUM lines."
+  (unless num (setq num 1))
+  (let* (beg end)
+    (save-excursion
+      (setq beg (line-beginning-position))
+      (forward-line (1- num))
+      (setq end (line-end-position)))
+    (cons beg end)))
+
+(defun evilmr-replace-lines (&optional num)
+  "Mark NUM lines and replace the thing."
+  (interactive "P")
+  (let* ((range (evilmr-get-range num))
+         (evilmr-tagged-region-begin (car range))
+         (evilmr-tagged-region-end (cdr range)))
+    (evilmr-replace #'evilmr-show-tagged-region)))
 
 ;;;###autoload
 (defun evilmr-replace-in-tagged-region ()
   "Mark tagged region and replace the thing."
   (interactive)
-  (evilmr-replace 'evilmr-show-tagged-region))
+  (evilmr-replace #'evilmr-show-tagged-region))
 
 ;;;###autoload
 (defun evilmr-version ()
   "Print current version."
   (interactive)
-  (message "0.0.4"))
+  (message "0.0.5"))
 
 (provide 'evil-mark-replace)
 ;;; evil-mark-replace.el ends here
