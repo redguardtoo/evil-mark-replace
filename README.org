@@ -1,12 +1,9 @@
 * evil-mark-replace (v0.0.4)
-Replace the thing in marked area.
+Replace symbol at point in marked area.
 
-The thing is either the *symbol under cursor or the selected text*.
-
-[[https://gitorious.org/evil/pages/Home][EVIL]] is required.
-
+[[https://github.com/emacs-evil/evil][EVIL]] is required.
 * Install
-Place evil-mark-replace.el somewhere (say ~/.emacs/lisp), add below code into ".emacs":
+Place =evil-mark-replace.el= somewhere (say ~/.emacs/lisp), add below code into =~/.emacs=:
 
 #+begin_src elisp
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -16,21 +13,19 @@ Place evil-mark-replace.el somewhere (say ~/.emacs/lisp), add below code into ".
 * Usage
 Here are the commands you can use. Feel free to assign key bindings to them.
 ** evilmr-replace-in-buffer
-Mark *buffer* and replace the thing.
+Mark current buffer and replace the thing.
 ** evilmr-replace-in-defun
-   Mark *defun* and replace the thing.
+Mark current function and replace the thing.
 ** evilmr-replace-in-tagged-region
-Mark *tagged region* and replace the thing.
+Mark tagged region and replace the thing.
 
-Tagged region is created by "M-x evilmr-tag-selected-region".
+Tagged region is created by =M-x evilmr-tag-selected-region=.
 
-You may "M-x evilmr-show-tagged-region" to double check tagged region.
+You may =M-x evilmr-show-tagged-region= to double check tagged region.
 * Bug Report
 See [[https://github.com/redguardtoo/evil-mark-replace]].
 
 * License
-Copyright (C) 2015 Chen Bin
-
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
