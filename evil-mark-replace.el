@@ -5,7 +5,7 @@
 ;; Author: Chen Bin <chenbin DOT sh AT gmail DOT com>
 ;; URL: http://github.com/redguardtoo/evil-mark-replace
 ;; Keywords: convenience
-;; Version: 0.0.5
+;; Version: 0.0.6
 ;; Package-Requires: ((evil "1.14.0"))
 
 ;; This file is not part of GNU Emacs.
@@ -29,8 +29,18 @@
 
 (require 'evil nil t)
 
+(defvar evilmr-only-word-p t
+  "If it's t, only matched words will be replaced.")
+
 (defvar evilmr-tagged-region-begin nil)
 (defvar evilmr-tagged-region-end nil)
+
+;;;###autoload
+(defun evilmr-toggle-only-word-p ()
+  "Toggle `evilmr-only-word-p'."
+  (interactive)
+  (setq evilmr-only-word-p (not evilmr-only-word-p))
+  (message "Now evilmr-only-word-p=%s" evilmr-only-word-p))
 
 ;;;###autoload
 (defun evilmr-replace (mark-fn)
@@ -50,7 +60,11 @@
     (unless (evil-visual-state-p)
       (kill-new old)
       (evil-visual-state))
-    (evil-ex (concat "'<,'>s/\\<\\(" escaped-old "\\)\\>/"))))
+    (evil-ex (concat "'<,'>s/"
+                     (if evilmr-only-word-p "'\\<\\(")
+                     escaped-old
+                     (if evilmr-only-word-p "\\)\\>")
+                     "/"))))
 
 ;;;###autoload
 (defun evilmr-show-tagged-region ()
@@ -115,7 +129,7 @@
 (defun evilmr-version ()
   "Print current version."
   (interactive)
-  (message "0.0.5"))
+  (message "0.0.6"))
 
 (provide 'evil-mark-replace)
 ;;; evil-mark-replace.el ends here
