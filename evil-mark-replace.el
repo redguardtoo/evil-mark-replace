@@ -61,7 +61,7 @@
       (kill-new old)
       (evil-visual-state))
     (evil-ex (concat "'<,'>s/"
-                     (if evilmr-only-word-p "'\\<\\(")
+                     (if evilmr-only-word-p "\\<\\(")
                      escaped-old
                      (if evilmr-only-word-p "\\)\\>")
                      "/"))))
