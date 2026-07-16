@@ -1,5 +1,5 @@
 * evil-mark-replace
-Replace symbol at point in marked area.
+Replace symbol at point in buffer or function.
 
 [[https://github.com/emacs-evil/evil][EVIL]] is required.
 * Install
@@ -13,17 +13,10 @@ Place =evil-mark-replace.el= somewhere (say ~/.emacs/lisp), add below code into 
 * Usage
 Here are the commands you can use. Feel free to assign key bindings to them.
 ** evilmr-replace-in-buffer
-Mark current buffer and replace the thing.
+Replace in current buffer.
 ** evilmr-replace-in-defun
-Mark current function and replace the thing.
-** evilmr-replace-in-tagged-region
-Mark tagged region and replace the thing.
+Narrow to current function and replace.
 
-Tagged region is created by =M-x evilmr-tag-selected-region=.
-
-You may =M-x evilmr-show-tagged-region= to double check tagged region.
-** evilmr-replace-lines
-Replace in mulitiple lines.
 * Bug Report
 See [[https://github.com/redguardtoo/evil-mark-replace]].
 
